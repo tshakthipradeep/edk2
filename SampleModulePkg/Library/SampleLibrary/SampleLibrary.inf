@@ -1,0 +1,36 @@
+## 
+#  Sample Library Reference
+#
+#  This is a sample Library that will print "Sample Hello World!!" to the
+#  UEFI Console based on PCD setting.
+#
+#  It demos how to use EDKII Library
+#
+##
+
+[Defines]
+  INF_VERSION			= 0x00010005
+  BASE_NAME			= SampleLibraryLib
+  FILE_GUID			= 048e2338-a801-4b3a-af64-4388b9758b9b
+  MODULE_TYPE			= BASE
+  LIBRARY_CLASS			= SampleLibraryLib
+
+[Sources]
+  SampleLibrary.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  SampleModulePkg/SampleModulePkg.dec
+
+[LibraryClasses]
+  UefiLib
+  PcdLib
+
+[FeaturePcd]
+  gEfiSampleModulePkgTokenSpaceGuid.PcdSampleHelloWorldEnabled
+
+[Pcd]
+  gEfiSampleModulePkgTokenSpaceGuid.PcdSampleHelloWorldPrintTimes
+  gEfiSampleModulePkgTokenSpaceGuid.PcdSampleHelloWorldPrintString
+ 

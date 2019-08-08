@@ -1,0 +1,32 @@
+## 
+#  Sample UEFI Library Application Reference
+#
+#  This is a sample shell application that will call a Library function
+#  which prints "Sample Hello World!!" to the UEFI Console based on PCD 
+#  setting.
+#
+#  It demos how to use EDKII Library
+#
+##
+
+[Defines]
+  INF_VERSION			= 0x00010005
+  BASE_NAME			= SampleLibraryApplication
+  FILE_GUID			= f855a6e1-c8bd-4e2f-a4b4-839c2885fabd
+  MODULE_TYPE			= UEFI_APPLICATION
+  ENTRY_POINT			= SampleLibraryApplicationEntryPoint
+  UEFI_SPECIFICATION_VERSION	= 0x0002001E
+
+[Sources]
+  SampleLibraryApplication.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  SampleModulePkg/SampleModulePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  SampleLibrary
+

@@ -24,8 +24,11 @@
   MemoryAllocationLib|MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib.inf
   DevicePathLib|MdePkg/Library/UefiDevicePathLibDevicePathProtocol/UefiDevicePathLibDevicePathProtocol.inf
   UefiRuntimeServicesTableLib|MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib.inf
+  SampleLibrary|SampleModulePkg/Library/SampleLibrary/SampleLibrary.inf
 
 [Components]
   SampleModulePkg/Application/SampleHelloWorld/SampleHelloWorld.inf
+  SampleModulePkg/Library/SampleLibrary/SampleLibrary.inf
+  SampleModulePkg/Application/SampleLibraryApplication/SampleLibraryApplication.inf
 
 
