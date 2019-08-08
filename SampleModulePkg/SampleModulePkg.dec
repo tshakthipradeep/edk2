@@ -1,0 +1,39 @@
+## 
+#  Sample UEFI Package Reference
+##
+
+[Defines]
+  DEC_SPECIFICATION 	= 0x00010005
+  PACKAGE_NAME  	= SampleModulePkg
+  PACKAGE_GUID 		= f30d0027-826e-42ae-a9ca-3ff141301d12
+  PACKAGE_VERSION  	= 0.1 
+
+[Includes]
+  Include    #Package Include directory
+
+[LibraryClasses]
+  ## Library class name is same to library header file name
+
+[Guids]
+  ## SampleModule package token space guid
+  gEfiSampleModulePkgTokenSpaceGuid = {0x22313695, 0xf304, 0x44f8, {0x86, 0x4d, 0x6b, 0xe2, 0x79, 0xe8, 0x95, 0xa8}}
+
+[PcdsFeatureFlag]
+  ## Indicates if HelloWorld Application will print the verbose information.
+  #  This PCD is a sample to explain FeatureFlag PCD usage.<BR><BR>
+  #   TRUE  - HelloWorld Application will print the verbose information.<BR>
+  #   FALSE - HelloWorld Application will not print the verbose information.<BR>
+  # @Prompt Enable HelloWorld print.
+  gEfiSampleModulePkgTokenSpaceGuid.PcdSampleHelloWorldEnabled|TRUE|BOOLEAN|0x0000001
+
+[PcdsFixedAtBuild]
+  ## This PCD defines the times to print hello world string.
+  #  This PCD is a sample to explain UINT32 PCD usage.
+  # @Prompt HellowWorld print times.
+  gEfiSampleModulePkgTokenSpaceGuid.PcdSampleHelloWorldPrintTimes|10|UINT8|0x00000002
+
+  ## This PCD defines the HelloWorld print string.
+  #  This PCD is a sample to explain String typed PCD usage.
+  # @Prompt HelloWorld print string.
+  gEfiSampleModulePkgTokenSpaceGuid.PcdSampleHelloWorldPrintString|"Sample Hello World!!"|VOID*|0x00000003
+ 

@@ -1,0 +1,38 @@
+## 
+#  Sample UEFI Application Reference
+#
+#  This is a sample shell application that will print "Sample Hello World!!" to the
+#  UEFI Console based on PCD setting.
+#
+#  It demos how to use EDKII PCD mechanism to make code more flexible.
+#
+##
+
+[Defines]
+  INF_VERSION			= 0x00010005
+  BASE_NAME			= SampleHelloWorld
+  FILE_GUID			= e0e6ec82-9889-4c15-b55f-3aab089b5ede
+  MODULE_TYPE			= UEFI_APPLICATION
+  ENTRY_POINT			= SampleHelloWorldEntryPoint
+  UEFI_SPECIFICATION_VERSION	= 0x0002001E
+
+[Sources]
+  SampleHelloWorld.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  SampleModulePkg/SampleModulePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  PcdLib
+
+[FeaturePcd]
+  gEfiSampleModulePkgTokenSpaceGuid.PcdSampleHelloWorldEnabled
+
+[Pcd]
+  gEfiSampleModulePkgTokenSpaceGuid.PcdSampleHelloWorldPrintTimes
+  gEfiSampleModulePkgTokenSpaceGuid.PcdSampleHelloWorldPrintString
+  
