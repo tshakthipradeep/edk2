@@ -1,0 +1,31 @@
+## 
+#  Sample UEFI Application reference which accepts Command Line Arguments
+#
+#  This is a sample shell application that accepts command line arguments
+#  and prints arguments count and arguments
+#
+##
+
+[Defines]
+  INF_VERSION			= 0x00010005
+  BASE_NAME			= SampleCommandLineApplication
+  FILE_GUID			= 289ae346-6718-402c-af35-cc857e5f04ec
+  MODULE_TYPE			= UEFI_APPLICATION
+  ENTRY_POINT			= SampleCommandLineApplicationEntryPoint
+  UEFI_SPECIFICATION_VERSION	= 0x0002001E
+
+[Sources]
+  SampleCommandLineApplication.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  SampleModulePkg/SampleModulePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+ 
+[Protocols]
+  gEfiShellParametersProtocolGuid 

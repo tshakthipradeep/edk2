@@ -25,10 +25,15 @@
   DevicePathLib|MdePkg/Library/UefiDevicePathLibDevicePathProtocol/UefiDevicePathLibDevicePathProtocol.inf
   UefiRuntimeServicesTableLib|MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib.inf
   SampleLibrary|SampleModulePkg/Library/SampleLibrary/SampleLibrary.inf
+  UefiBootServicesTableLib|MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib.inf
 
 [Components]
+  ## Sample Hello World Application reference
   SampleModulePkg/Application/SampleHelloWorld/SampleHelloWorld.inf
+
+  ## Sample Library and Application Reference
   SampleModulePkg/Library/SampleLibrary/SampleLibrary.inf
   SampleModulePkg/Application/SampleLibraryApplication/SampleLibraryApplication.inf
 
-
+  ## Sample Application reference which accepts command line arguments
+  SampleModulePkg/Application/SampleCommandLineApplication/SampleCommandLineApplication.inf
