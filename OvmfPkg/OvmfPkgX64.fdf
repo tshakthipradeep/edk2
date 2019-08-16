@@ -386,6 +386,12 @@ INF  MdeModulePkg/Universal/FaultTolerantWriteDxe/FaultTolerantWriteDxe.inf
 INF  MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
 !endif
 
+
+#
+# Sample Module Package
+#
+INF SampleModulePkg/SampleDxe/SampleDxe.inf 
+
 ################################################################################
 
 [FV.FVMAIN_COMPACT]

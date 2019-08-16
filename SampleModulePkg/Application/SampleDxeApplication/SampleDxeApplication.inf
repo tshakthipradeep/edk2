@@ -1,0 +1,28 @@
+## 
+#  Sample UEFI Application reference which access DXE services using Protocol
+#
+##
+
+[Defines]
+  INF_VERSION			= 0x00010005
+  BASE_NAME			= SampleDxeApplication
+  FILE_GUID			= 809bc5ab-b8fd-49d7-8817-97fce46ec7c0
+  MODULE_TYPE			= UEFI_APPLICATION
+  ENTRY_POINT			= SampleDxeApplicationEntryPoint
+  UEFI_SPECIFICATION_VERSION	= 0x0002001E
+
+[Sources]
+  SampleDxeApplication.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  SampleModulePkg/SampleModulePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+ 
+[Protocols]
+  gEfiSampleDxeProtocolGuid 

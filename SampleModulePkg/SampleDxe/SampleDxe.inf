@@ -1,0 +1,31 @@
+## 
+#  Sample DXE DRIVER which exports services by installing protocol
+#
+##
+
+[Defines]
+  INF_VERSION			= 0x00010005
+  BASE_NAME			= SampleDxe
+  FILE_GUID			= 12127efc-a0c2-4165-a441-52282fb017fb
+  MODULE_TYPE			= DXE_DRIVER
+  ENTRY_POINT			= SampleDxeEntryPoint
+
+[Sources]
+  SampleDxe.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  SampleModulePkg/SampleModulePkg.dec
+
+[LibraryClasses]
+  UefiLib
+  DebugLib
+  UefiBootServicesTableLib
+  UefiDriverEntryPoint
+
+[Protocols]
+  gEfiSampleDxeProtocolGuid	## PRODUCES
+
+[Depex]
+  TRUE

@@ -1,0 +1,46 @@
+#########################################################
+CONTENT
+#########################################################
+
+*********************************************************
+APPLICATIONS	
+*********************************************************
+
+NAME		: SampleHelloWorld	
+DESCRIPTION	: This is a sample shell application that will print "Sample Hello World!!" to the UEFI Console based on PCD setting.
+
+NAME		: SampleCommandLineApplication
+DESCRIPTION	: This is a sample shell application that accepts command line arguments and prints arguments count and arguments
+
+NAME		: SampleDxeApplication
+DESCRIPTION	: Sample UEFI Application reference which access DXE services using Protocol
+
+*********************************************************
+DXE DRIVER	
+*********************************************************
+
+NAME		: SampleDxe	
+DESCRIPTION	: Sample DXE DRIVER which exports services by installing protocol
+
+
+*********************************************************
+Update Conf/target.txt
+*********************************************************
+ACTIVE_PLATFORM       = OvmfPkg/OvmfPkgX64.dsc
+TARGET_ARCH           = X64
+TOOL_CHAIN_TAG        = GCC5
+
+*********************************************************
+BUILD and SETUP FILES FOR SIMULATION
+*********************************************************
+
+1. build -p OvmfPkg/OvmfPkgX64.dsc -> Builds OVMF.fd
+2. build -p SampleModulePkg/SampleModulePkg.dsc -> Builds all UEFI applications
+3. cp Build/OvmfX64/DEBUG_GCC5/FV/OVMF.fd ~/QEMU/bios.bin
+4. cp Build/SampleModulePkg/DEBUG_GCC5/X64/*.efi ../QEMU/HDA/
+
+*********************************************************
+QEMU SIMULATION COMMANDS
+*********************************************************
+
+qemu-system-x86_64 -L . --bios bios.bin -net none -hda fat:rw:HDA -serial stdio

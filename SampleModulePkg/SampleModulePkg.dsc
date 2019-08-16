@@ -26,6 +26,7 @@
   UefiRuntimeServicesTableLib|MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib.inf
   SampleLibrary|SampleModulePkg/Library/SampleLibrary/SampleLibrary.inf
   UefiBootServicesTableLib|MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib.inf
+  UefiDriverEntryPoint|MdePkg/Library/UefiDriverEntryPoint/UefiDriverEntryPoint.inf
 
 [Components]
   ## Sample Hello World Application reference
@@ -37,3 +38,6 @@
 
   ## Sample Application reference which accepts command line arguments
   SampleModulePkg/Application/SampleCommandLineApplication/SampleCommandLineApplication.inf
+
+  SampleModulePkg/SampleDxe/SampleDxe.inf
+  SampleModulePkg/Application/SampleDxeApplication/SampleDxeApplication.inf

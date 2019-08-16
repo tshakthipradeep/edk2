@@ -36,4 +36,6 @@
   #  This PCD is a sample to explain String typed PCD usage.
   # @Prompt HelloWorld print string.
   gEfiSampleModulePkgTokenSpaceGuid.PcdSampleHelloWorldPrintString|"Sample Hello World!!"|VOID*|0x00000003
- 
+
+[Protocols]
+  gEfiSampleDxeProtocolGuid = {0x13b2f6dc, 0xf488, 0x43e6, {0xa1, 0x68, 0x2a, 0xb1, 0x99, 0x6c, 0x48, 0xab}} 
